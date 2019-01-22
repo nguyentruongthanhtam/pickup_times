@@ -41,7 +41,8 @@ class App extends Component {
         dates_array.push(date.substring(0,10))
       }
     }
-
+    // sort dates array
+    dates_array.sort()
     // update dates object then feed to input fields
     this.setState({
       result: result.data,
@@ -81,7 +82,7 @@ class App extends Component {
       {
         pickup_times_array[location_id-1].pickup_time.push(pickup_time);
       }
-    }
+    }    
 
     // Update the locations data after added pickup_times array
     this.setState({locations: pickup_times_array})
@@ -115,7 +116,6 @@ class App extends Component {
   }
   
   render() {
-    let loading = this.state.isLoading
     let result = this.state.result
     let dates_array = this.state.dates
     let locations = this.state.locations
